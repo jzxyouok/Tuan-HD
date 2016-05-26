@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HMChangeCitiesViewController">
+            <connections>
+                <outlet property="coverView" destination="rmH-3i-nIb" id="7VT-Q5-ktV"/>
+                <outlet property="navBarTopLc" destination="foN-jV-QGw" id="AK9-LI-o9N"/>
+                <outlet property="view" destination="NnI-hp-IPV" id="vFD-BY-vft"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="NnI-hp-IPV">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="500"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1bv-uL-8Xd" userLabel="导航栏">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="62"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_navigationBar_normal" translatesAutoresizingMaskIntoConstraints="NO" id="MhL-KI-g2k">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="62"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="62" id="wO8-Vm-8zc"/>
+                            </constraints>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ivq-ge-2uU">
+                            <rect key="frame" x="0.0" y="0.0" width="62" height="62"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="62" id="GyY-fj-cMr"/>
+                            </constraints>
+                            <state key="normal" image="btn_navigation_close">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="closeChangeCity" destination="-1" eventType="touchUpInside" id="xw3-6Y-cp9"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="切换城市" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M70-OL-0Ns">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="62"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.95400886220000003" green="0.7672131714" blue="0.93453902990000004" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="62" id="5j9-Z1-Oxy"/>
+                        <constraint firstAttribute="bottom" secondItem="ivq-ge-2uU" secondAttribute="bottom" id="DL9-CK-mDO"/>
+                        <constraint firstAttribute="bottom" secondItem="M70-OL-0Ns" secondAttribute="bottom" id="DWl-mw-ncf"/>
+                        <constraint firstItem="ivq-ge-2uU" firstAttribute="leading" secondItem="1bv-uL-8Xd" secondAttribute="leading" id="OpF-hP-Ehk"/>
+                        <constraint firstItem="MhL-KI-g2k" firstAttribute="top" secondItem="1bv-uL-8Xd" secondAttribute="top" id="QUE-az-Fkj"/>
+                        <constraint firstItem="MhL-KI-g2k" firstAttribute="leading" secondItem="1bv-uL-8Xd" secondAttribute="leading" id="YRB-EQ-Mw3"/>
+                        <constraint firstAttribute="trailing" secondItem="M70-OL-0Ns" secondAttribute="trailing" id="eXA-hp-mVi"/>
+                        <constraint firstAttribute="trailing" secondItem="MhL-KI-g2k" secondAttribute="trailing" id="kOy-Li-3wI"/>
+                        <constraint firstItem="M70-OL-0Ns" firstAttribute="top" secondItem="1bv-uL-8Xd" secondAttribute="top" id="mS3-Vj-Hzn"/>
+                        <constraint firstItem="ivq-ge-2uU" firstAttribute="top" secondItem="1bv-uL-8Xd" secondAttribute="top" id="mdS-Y0-pul"/>
+                        <constraint firstItem="M70-OL-0Ns" firstAttribute="leading" secondItem="1bv-uL-8Xd" secondAttribute="leading" id="zZr-NW-fcT"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="d2p-pX-mMX">
+                    <rect key="frame" x="10" y="117" width="300" height="383"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="sectionIndexColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="dWz-0j-jGj"/>
+                        <outlet property="delegate" destination="-1" id="ujs-ME-Ag6"/>
+                    </connections>
+                </tableView>
+                <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rmH-3i-nIb" userLabel="cover">
+                    <rect key="frame" x="0.0" y="117" width="320" height="383"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="coverClick" destination="-1" eventType="touchUpInside" id="Aen-xg-Deq"/>
+                    </connections>
+                </button>
+                <searchBar contentMode="redraw" placeholder="请输入城市名或简称" backgroundImage="bg_login_textfield" translatesAutoresizingMaskIntoConstraints="NO" id="93p-50-tOO">
+                    <rect key="frame" x="10" y="72" width="300" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="tvC-yd-gCR"/>
+                    </constraints>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="dVy-dl-i7m"/>
+                    </connections>
+                </searchBar>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="93p-50-tOO" firstAttribute="top" secondItem="1bv-uL-8Xd" secondAttribute="bottom" constant="10" id="GZs-5j-tW8"/>
+                <constraint firstItem="rmH-3i-nIb" firstAttribute="leading" secondItem="NnI-hp-IPV" secondAttribute="leading" id="JZ9-0j-bex"/>
+                <constraint firstAttribute="trailing" secondItem="rmH-3i-nIb" secondAttribute="trailing" id="Ssg-Nl-BUG"/>
+                <constraint firstItem="rmH-3i-nIb" firstAttribute="top" secondItem="93p-50-tOO" secondAttribute="bottom" constant="10" id="XpP-8V-y3N"/>
+                <constraint firstItem="1bv-uL-8Xd" firstAttribute="top" secondItem="NnI-hp-IPV" secondAttribute="top" id="foN-jV-QGw"/>
+                <constraint firstAttribute="trailing" secondItem="1bv-uL-8Xd" secondAttribute="trailing" id="h29-o1-6NE"/>
+                <constraint firstItem="1bv-uL-8Xd" firstAttribute="leading" secondItem="NnI-hp-IPV" secondAttribute="leading" id="h9q-SL-Zzr"/>
+                <constraint firstAttribute="trailing" secondItem="d2p-pX-mMX" secondAttribute="trailing" constant="10" id="li7-dp-fPZ"/>
+                <constraint firstAttribute="bottom" secondItem="d2p-pX-mMX" secondAttribute="bottom" id="mgg-hz-VEZ"/>
+                <constraint firstItem="d2p-pX-mMX" firstAttribute="leading" secondItem="NnI-hp-IPV" secondAttribute="leading" constant="10" id="ojf-Eq-Izm"/>
+                <constraint firstItem="d2p-pX-mMX" firstAttribute="top" secondItem="93p-50-tOO" secondAttribute="bottom" constant="10" id="q1N-Vk-T1O"/>
+                <constraint firstAttribute="bottom" secondItem="rmH-3i-nIb" secondAttribute="bottom" id="wvQ-Br-BOS"/>
+                <constraint firstItem="93p-50-tOO" firstAttribute="leading" secondItem="NnI-hp-IPV" secondAttribute="leading" constant="10" id="xBU-Mu-isW"/>
+                <constraint firstAttribute="trailing" secondItem="93p-50-tOO" secondAttribute="trailing" constant="10" id="z3b-5A-LsC"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="436" y="400"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="bg_login_textfield" width="9" height="11"/>
+        <image name="bg_navigationBar_normal" width="124" height="124"/>
+        <image name="btn_navigation_close" width="30" height="30"/>
+    </resources>
+</document>

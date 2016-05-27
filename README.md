@@ -1,5 +1,5 @@
 # Tuan-HD
-模仿美团的团购HD，IPad使用
+模仿美团的团购HD，有点点bug
 
 
 
